@@ -1,0 +1,25 @@
+# https://docs.microsoft.com/en-us/azure/key-vault/quick-create-java
+
+# Create a Resource Group
+az group create --name "myResourceGroup" -l "EastUS"
+
+# Create a KeyVault
+az keyvault create --name <your-unique-keyvault-name> -g "myResourceGroup"
+
+# Create a Service Principal and take note of
+# - clientId
+# - clientSecret
+# - tenantId
+az ad sp create-for-rbac -n "http://mySP" --sdk-auth
+
+# Give the Service Principal access to your key vault
+az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
+
+# Set Environment Variables
+# replace 'export' with 'set' for Windows commandline
+export AZURE_CLIENT_ID=<your-clientID>
+export AZURE_CLIENT_SECRET=<your-clientSecret>
+export AZURE_TENANT_ID=<your-tenantId>
+export KEY_VAULT_NAME=<your-key-vault-name>
+# In Windows commandline, run 'set' to view all environment variables
+ 
