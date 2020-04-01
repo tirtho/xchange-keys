@@ -7,9 +7,16 @@ import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.secretsmanager.AWSSecretsManager;
 import com.amazonaws.services.secretsmanager.AWSSecretsManagerClientBuilder;
 import com.amazonaws.services.secretsmanager.model.CreateSecretRequest;
+import com.amazonaws.services.secretsmanager.model.EncryptionFailureException;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueResult;
+import com.amazonaws.services.secretsmanager.model.InternalServiceErrorException;
+import com.amazonaws.services.secretsmanager.model.InvalidParameterException;
 import com.amazonaws.services.secretsmanager.model.InvalidRequestException;
+import com.amazonaws.services.secretsmanager.model.LimitExceededException;
+import com.amazonaws.services.secretsmanager.model.MalformedPolicyDocumentException;
+import com.amazonaws.services.secretsmanager.model.PreconditionNotMetException;
+import com.amazonaws.services.secretsmanager.model.ResourceExistsException;
 import com.amazonaws.services.secretsmanager.model.ResourceNotFoundException;
 
 public class AWSKeyStore implements ICloudKeyStore {
@@ -59,8 +66,18 @@ public class AWSKeyStore implements ICloudKeyStore {
 		CreateSecretRequest createSecretRequest = new CreateSecretRequest();
 		createSecretRequest.setName(secretName);
 		createSecretRequest.setSecretString(secretValue);
-		client.createSecret(createSecretRequest);
-		return false;
+		try {
+			client.createSecret(createSecretRequest);
+		} catch (ResourceExistsException e) {
+			logger.log(Level.SEVERE, "A key by this name already exists");
+			return false;
+		} catch (InvalidParameterException | InvalidRequestException | LimitExceededException | 
+				EncryptionFailureException | ResourceNotFoundException | MalformedPolicyDocumentException | 
+				InternalServiceErrorException | PreconditionNotMetException e) {
+			logger.log(Level.SEVERE, String.format("Failed to save secret: %s", e.getMessage()));
+			return false;
+		}
+		return true;
 	}
 
 }
