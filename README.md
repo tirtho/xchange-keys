@@ -7,7 +7,7 @@ Supported Public Cloud Service Providers are
 - Amazon KMS
 - HashiCorp Vault
 
-# Table of Contents #
+## Table of Contents ##
 - [xchange-keys](#xchange-keys)
   * [BUILD](#build)
   * [SETUP](#setup)
@@ -157,6 +157,9 @@ EXAMPLE run with command line arguments are below:
             HashiCorp Vault Secret Name
 ```
 
+## TODOs ##
+
+- Add code to support X.509 Client Certificate based Auth
 
 License
 ----
