@@ -160,7 +160,7 @@ EXAMPLE run with command line arguments are below:
 
 ## TODOs ##
 
-- Add code to support X.509 Client Certificate based Auth
+- Add code to support X.509 Client Certificate based Auth for HashiCorp Vault Server
 
 License
 ----
