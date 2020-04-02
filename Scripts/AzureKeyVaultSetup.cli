@@ -16,10 +16,10 @@ az ad sp create-for-rbac -n "http://mySP" --sdk-auth
 az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
 
 # Set Environment Variables
-# replace 'export' with 'set' for Windows commandline
+# replace 'export' with 'set' for Windows command line
 export AZURE_CLIENT_ID=<your-clientID>
 export AZURE_CLIENT_SECRET=<your-clientSecret>
 export AZURE_TENANT_ID=<your-tenantId>
 export KEY_VAULT_NAME=<your-key-vault-name>
-# In Windows commandline, run 'set' to view all environment variables
+# In Windows command line, run 'set' to view all environment variables
  
