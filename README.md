@@ -7,6 +7,22 @@ Supported Public Cloud Service Providers are
 - Amazon KMS
 - HashiCorp Vault
 
+# Table of Contents #
+- [xchange-keys](#xchange-keys)
+  * [BUILD](#build)
+  * [SETUP](#setup)
+      - [Azure KeyVault](#azure-keyvault)
+      - [AWS Secrets Manager (KMS)](#aws-secrets-manager--kms-)
+      - [HashiCorp Vault](#hashicorp-vault)
+  * [RUN](#run)
+      - [From Azure KeyVault to AWS Secrets Manager](#from-azure-keyvault-to-aws-secrets-manager)
+      - [From HashiCorp Vault to AWS Secrets Manager](#from-hashicorp-vault-to-aws-secrets-manager)
+      - [From Command Line to Azure KeyVault](#from-command-line-to-azure-keyvault)
+      - [Run commmand with --help](#run-commmand-with---help)
+      - [Command line arguments](#command-line-arguments)
+  * [License](#license)
+
+
 ## BUILD ##
 
 Prerequisites are:
