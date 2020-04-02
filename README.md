@@ -1,10 +1,11 @@
 # xchange-keys #
 This Java Application allows you to write/read secrets to/from or between Public Cloud Providers.
 For example, you can run this application to read a secret key/value pair from Azure KeyVault and write it to HashiCorp Vault or AWS KMS.
-You can also read from or write to a Public Cloud.
+You can also read from or write to a Public Cloud Provider.
 
 This tool could be integrated into your automated CI/CD pipelines in a multi-cloud environment.
-Supported Public Cloud Service Providers are 
+
+Supported Public Cloud Providers are 
 
 - Azure Key Vault
 - Amazon KMS
