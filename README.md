@@ -118,7 +118,7 @@ EXAMPLE run with command line arguments are below:
 
 #### From Azure KeyVault to AWS Secrets Manager ####
 ```sh
-> java -jar xchangekeys-0.1-SNAPSHOT.jar -src AZ -azKV TBDemoKeyVault -azSN cliSentSecret -dest AWS -awsR us-east-2 -awsEP secretsmanager.us-east-2.amazonaws.com -awsSN fromAzureCliSentSecret
+> java -jar target\xchangekeys-0.1-SNAPSHOT.jar -src AZ -azKV TBDemoKeyVault -azSN cliSentSecret -dest AWS -awsR us-east-2 -awsEP secretsmanager.us-east-2.amazonaws.com -awsSN fromAzureCliSentSecret
 ```
 
 #### From HashiCorp Vault to AWS Secrets Manager ####
@@ -168,7 +168,7 @@ EXAMPLE run with command line arguments are below:
 
 License
 ----
-
+[MIT License][MITL]
 Copyright (c) 2020-2025 Tirthankar Barari
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -194,3 +194,4 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 [//]: # (Comments in Markdown. See details here - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 [hashiLib]: <https://github.com/BetterCloud/vault-java-driver>
+[MITL]: <https://en.wikipedia.org/wiki/MIT_License>
