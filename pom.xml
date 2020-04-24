@@ -131,5 +131,28 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<repositories>
+		<repository>
+			<id>XChange-Keys</id>
+			<url>https://pkgs.dev.azure.com/TRDemoAzureDevOpsOrg/xchange-keys/_packaging/XChange-Keys/maven/v1</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>XChange-Keys</id>
+			<url>https://pkgs.dev.azure.com/TRDemoAzureDevOpsOrg/xchange-keys/_packaging/XChange-Keys/maven/v1</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</distributionManagement>
 </project>

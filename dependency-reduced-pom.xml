@@ -44,6 +44,14 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <releases />
+      <snapshots />
+      <id>XChange-Keys</id>
+      <url>https://pkgs.dev.azure.com/TRDemoAzureDevOpsOrg/xchange-keys/_packaging/XChange-Keys/maven/v1</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -58,6 +66,12 @@
       </exclusions>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>XChange-Keys</id>
+      <url>https://pkgs.dev.azure.com/TRDemoAzureDevOpsOrg/xchange-keys/_packaging/XChange-Keys/maven/v1</url>
+    </repository>
+  </distributionManagement>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>

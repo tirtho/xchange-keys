@@ -2,6 +2,10 @@ Exchange keys across public cloud key stores
 This java application will allow you to copy keys/secrets between Azure Key Vault, AWS KMS or HasiCorp Vault
 You can also pass a secret from command line to Azure Key Vault, AWS KMS or HashiCorp Vault and vice versa
 
+# You can download the jar artifact from - 
+# https://dev.azure.com/TRDemoAzureDevOpsOrg/xchange-keys/_packaging?_a=package&feed=XChange-Keys&package=com.ab.tools%3Axchangekeys&protocolType=maven&version=0.1-SNAPSHOT&view=overview
+# Or pull the code from GitHub, build and run
+
 Before running the program, make sure you have these System Environment Variables set -
 # Set Environment Variables for ---Azure--- Service Principal Credentials
 export AZURE_CLIENT_ID=<your-clientID>
